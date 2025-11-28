@@ -72,6 +72,18 @@ To get a local copy up and running, follow these simple steps.
    php artisan migrate --seed
    ```
 
+#### Docker
+```sh
+docker compose up -d
+docker compose exec app composer install
+cp .env.example .env
+docker compose exec app php artisan key:generate
+docker compose exec app php artisan migrate --seed
+docker compose exec app php artisan serve --host=0.0.0.0 --port=8000
+(p)npm install
+(p)npm run dev
+```
+
 ## Contributing
 
 Contributions are welcome. Please open an issue first to discuss what you would like to change.
